@@ -9,5 +9,5 @@ import JobListings from '@/components/JobListings.vue';
   <!-- <Hero title='test title' subtitle ='subtitle test'/> -->
   <Hero/>
 <HomeCard/>
-<JobListings/>
+<JobListings :limit="1" />
 </template>
