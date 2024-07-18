@@ -1,22 +1,22 @@
 <script setup>
 import { ref, defineProps, computed } from 'vue';
-
+import { RouterLink } from 'vue-router';
 const props = defineProps({
-  job: Object,
+    job: Object,
 });
 
 const showFullDescription = ref(false);
 
 const toggleDescription = () => {
-  showFullDescription.value = !showFullDescription.value;
+    showFullDescription.value = !showFullDescription.value;
 };
 
 const truncatedDescription = computed(() => {
-  let description = props.job.description;
-  if (!showFullDescription.value) {
-    description = description.substring(0, 90) + '...';
-  }
-  return description;
+    let description = props.job.description;
+    if (!showFullDescription.value) {
+        description = description.substring(0, 90) + '...';
+    }
+    return description;
 });
 </script>
 <template>
@@ -41,10 +41,10 @@ const truncatedDescription = computed(() => {
                     <i class='pi pi-map-marker text-orange-700'></i>
                     {{ job.location }}
                 </div>
-                <a :href="'/job/' + job.id"
+                <RouterLink :to="'/jobs/' + job.id"
                     class="h-[36px] bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-center text-sm">
                     Read More
-                </a>
+                </RouterLink>
             </div>
         </div>
     </div>
