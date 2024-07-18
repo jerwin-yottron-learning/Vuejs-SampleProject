@@ -1,4 +1,16 @@
 <script setup>
+import {defineProps} from 'vue'; //props are used to transfer the data from parent component to child components
+defineProps({
+title:{
+    type:String,
+    default:'Yottron Job Portal'
+},
+subtitle:{
+    type:String,
+    default:'Find the job that fits your skills and needs'
+}
+
+});
 </script>
 <template>
     <section class="bg-green-700 py-20 mb-4">
@@ -7,10 +19,10 @@
     >
       <div class="text-center">
         <h1 class="text-4xl font-extrabold text-white sm:text-5xl md:text-6xl">
-          Become a Vue Dev at YottronSolutions
+          {{ title }}
         </h1>
         <p class="my-4 text-xl text-white">
-          Find the  job that fits your skills and needs
+            {{ subtitle }}
         </p>
       </div>
     </div>
